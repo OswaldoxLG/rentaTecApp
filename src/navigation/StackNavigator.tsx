@@ -3,7 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { PhonesScreen } from '../screens/PhonesScreen';
 import { LaptopsScreen } from '../screens/LaptopsScreen';
-import { ServiciosScreen } from '../screens/ServiciosScreen';
+import { ServiciosScreen1 } from '../screens/ServiciosScreen1';
+import { ServiciosScreen2 } from '../screens/ServiciosScreen2';
 import { CarritoScreen } from '../screens/CarritoScreen';
 import { ImageSourcePropType } from 'react-native';
 
@@ -65,11 +66,19 @@ const eliminarDelCarrito = (productoId: number) => {
                 )}
             </Stack.Screen>
             <Stack.Screen
-                name="Servicios"
-                options={{ title: 'Servicios' }}
+                name="Servicios1"
+                options={{ title: 'Soporte Técnico' }}
             >
                 {(props) => (
-                    <ServiciosScreen {...props} agregarAlCarrito={agregarAlCarrito} />
+                    <ServiciosScreen1 {...props} agregarAlCarrito={agregarAlCarrito} />
+                )}
+            </Stack.Screen>
+            <Stack.Screen
+                name="Servicios2"
+                options={{ title: 'Mantenimiento de Equipos' }}
+            >
+                {(props) => (
+                    <ServiciosScreen2 {...props} agregarAlCarrito={agregarAlCarrito} />
                 )}
             </Stack.Screen>
             <Stack.Screen

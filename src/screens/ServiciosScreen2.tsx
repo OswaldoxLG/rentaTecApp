@@ -1,8 +1,8 @@
 import { StackScreenProps } from '@react-navigation/stack'
-import { Text, View,ScrollView } from 'react-native'
+import { Button, Text, View, ScrollView } from 'react-native'
 import { styles } from '../../theme/appTheme'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Laptops } from '../components/Laptops'
+import { Servicios2 } from '../components/Servicios2'
 import { ImageSourcePropType } from 'react-native';
 
 //interface Props extends StackScreenProps <any, any>{};
@@ -10,7 +10,7 @@ export interface Producto {
     id: number;
     nombre: string;
     precio: number;
-    cantidad: number;
+    cantidad?: number;
     img: ImageSourcePropType;
 }
 
@@ -19,17 +19,20 @@ interface Props {
     navigation: any; // Ajusta según el tipo de navegación
 }
 
-export const LaptopsScreen = ({navigation, agregarAlCarrito}:Props) => {
+export const ServiciosScreen2 = ({navigation, agregarAlCarrito}:Props) => {
     return (
     <ScrollView style={styles.globalMargin}>
-        <View>
-            <Laptops agregarAlCarrito={agregarAlCarrito}/>
-        </View>
+    <View>
+        <Servicios2 agregarAlCarrito={agregarAlCarrito}/>
+    </View>
+    <View>
         <TouchableOpacity style={styles.home_boton}
-            onPress={()=>navigation.navigate('Servicios1')}
+            onPress={()=>navigation.navigate('Carrito')}
         >
-            <Text style={styles.txtBtnHome}>Sigue buscando...</Text>
+            <Text style={styles.txtBtnHome}>Pasa a pagar</Text>
         </TouchableOpacity>
+    </View>
     </ScrollView>
+
     )
 }

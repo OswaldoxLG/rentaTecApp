@@ -42,6 +42,11 @@ const handleCarrito = (phone: Phone) => {
         const productoConCantidad = { ...phone, cantidad };
         agregarAlCarrito(productoConCantidad); // Agrega al carrito usando la función recibida por props
         Alert.alert('Carrito', `${phone.nombre} agregado con éxito!`);
+        //limpia el campo cantidad
+        setcantidadProducto((prev) => ({
+        ...prev,
+        [phone.id]: 0 
+        }));
     }
 };
 
@@ -52,9 +57,9 @@ const handleCarrito = (phone: Phone) => {
                 <Image source={phone.img} style={styles.productImg} />
                 <Text style={styles.productNom}>{phone.nombre}</Text>  
                 <Text style={styles.productPrice}>${phone.precio}</Text>
+                <Text style={styles.txtCajaCantidad}>Cantidad:</Text>
                 <TextInput
                     style={styles.productCantidad}
-                    placeholder="Cantidad"
                     keyboardType="numeric"
                     value={cantidadProducto[phone.id]?.toString() || ''}
                     onChangeText={(text) => handleCambioCantidad(phone.id, text)}

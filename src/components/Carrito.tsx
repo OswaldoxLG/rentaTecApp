@@ -27,17 +27,20 @@ export const Carrito = ({carrito, eliminarDelCarrito}:Props) => {
                 carrito.map((producto) => (
                     <View key={producto.id} style={styles.cuadroProducts}>
                         <Image source={producto.img} style={styles.productImgCarrito} />
-                        <View>
-                            <Text>Nombre: {producto.nombre}</Text>
-                            <Text>Cantidad: {producto.cantidad}</Text>
-                            <Text>Precio: ${producto.precio}</Text>
+                        <View style={styles.detailsCompra}>
+                            <Text style={styles.txtDetailsCompra}>Nombre: </Text>
+                            <Text>{producto.nombre}</Text>
+                            <Text style={styles.txtDetailsCompra}>Cantidad:</Text>
+                            <Text>{producto.cantidad}</Text>
+                            <Text style={styles.txtDetailsCompra}>Precio:</Text>
+                            <Text>${producto.precio}</Text>
                         </View>
                         <View>
                             <TouchableOpacity 
                             style={styles.btnEliminar}
                             onPress={() => eliminarDelCarrito(producto.id)} 
                             >
-                                <Text >Eliminar</Text>
+                                <Text>X</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

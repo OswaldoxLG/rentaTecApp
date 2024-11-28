@@ -140,9 +140,13 @@ export const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'space-between', 
     },
+    detailsCompra:{
+        flex: 1,
+        marginLeft: 10,
+    },
     productImgCarrito:{
-        width: 90, 
-        height: 90, 
+        width: 70, 
+        height: 70, 
         marginRight: 0,
     },
     btnEliminar:{
@@ -151,7 +155,7 @@ export const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 5,
         alignSelf: 'center',
-        width: 70,
+        width: 20,
         textAlign: 'center',
         color: '#fff',
     },
@@ -163,5 +167,28 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 20,
     },
+    parrafoServicio:{
+        fontSize: 20,
+        textAlign: 'center',
+        marginTop: 20,
+        marginBottom: 20,
+    },
+    cajaDes:{
+        marginBottom: 20,
+    },
+    txtDetailsCompra:{
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+    desServ1:{
+        fontSize: 15,
+        marginBottom: 20,
+        marginTop: 10,      
+        textAlign: 'justify',
+        lineHeight: 20
+    },
+    txtCajaCantidad:{
+        fontSize:15,
+    }
 });
 

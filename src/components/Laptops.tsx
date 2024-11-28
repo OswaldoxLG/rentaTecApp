@@ -42,8 +42,13 @@ export const Laptops = ({agregarAlCarrito}:Props) => {
             const productoConCantidad = { ...laptop, cantidad };
             agregarAlCarrito(productoConCantidad); // Agrega al carrito usando la función recibida por props
             Alert.alert('Carrito', `${laptop.nombre} agregado con éxito!`);
-        }
-    };
+            //limpia el campo cantidad
+            setcantidadProducto((prev) => ({
+                ...prev,
+                [laptop.id]: 0
+            }));
+    }
+};   
 
     return (
     <View style={styles.productContenedorMain}>
@@ -52,9 +57,9 @@ export const Laptops = ({agregarAlCarrito}:Props) => {
                 <Image source={laptop.img} style={styles.productImg} />
                 <Text style={styles.productNom}>{laptop.nombre}</Text>  
                 <Text style={styles.productPrice}>${laptop.precio}</Text>
+                <Text style={styles.txtCajaCantidad}>Cantidad:</Text>
                 <TextInput
                     style={styles.productCantidad}
-                    placeholder="Cantidad"
                     keyboardType="numeric"
                     value={cantidadProducto[laptop.id]?.toString() || ''}
                     onChangeText={(text) => handleCambioCantidad(laptop.id, text)}
