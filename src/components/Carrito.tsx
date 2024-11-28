@@ -28,7 +28,7 @@ export const Carrito = ({carrito, eliminarDelCarrito}:Props) => {
                     <View key={producto.id} style={styles.cuadroProducts}>
                         <Image source={producto.img} style={styles.productImgCarrito} />
                         <View>
-                            <Text>Producto: {producto.nombre}</Text>
+                            <Text>Nombre: {producto.nombre}</Text>
                             <Text>Cantidad: {producto.cantidad}</Text>
                             <Text>Precio: ${producto.precio}</Text>
                         </View>

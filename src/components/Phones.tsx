@@ -18,11 +18,11 @@ interface Props {
 export const Phones = ({agregarAlCarrito}:Props) => {
 
     const phones: Phone[] = [
-        { id: 1, nombre: 'Producto 1', precio: 19.99, cantidad: 0, img: require('../assets/phone1.png') },
-        { id: 2, nombre: 'Producto 2', precio: 24.99, cantidad: 0, img: require('../assets/phone2.png') },
-        { id: 3, nombre: 'Producto 3', precio: 24.99, cantidad: 0, img: require('../assets/phone3.png')}, 
-        { id: 4, nombre: 'Producto 4', precio: 24.99, cantidad: 0, img: require('../assets/phone4.png')}, 
-        { id: 5, nombre: 'Producto 5', precio: 24.99, cantidad: 0, img: require('../assets/phoneAsus1.png') }, 
+        { id: 1, nombre: 'Nokia', precio: 4999.99, cantidad: 0, img: require('../assets/phone1.png') },
+        { id: 2, nombre: 'Samsung', precio: 8999.99, cantidad: 0, img: require('../assets/phone2.png') },
+        { id: 3, nombre: 'POCO', precio: 5000.99, cantidad: 0, img: require('../assets/phone3.png')}, 
+        { id: 4, nombre: 'iPhone', precio: 10000.00, cantidad: 0, img: require('../assets/phone4.png')}, 
+        { id: 5, nombre: 'ZTE', precio: 3999.99, cantidad: 0, img: require('../assets/phoneAsus1.png') }, 
     ];
 
 const [cantidadProducto, setcantidadProducto] = useState<{ [key: number]: number }>({});

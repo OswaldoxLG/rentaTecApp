@@ -19,11 +19,11 @@ interface Props {
 export const Laptops = ({agregarAlCarrito}:Props) => {
 
     const laptops: Laptop[] = [
-        { id: 1, nombre: 'Producto 1', precio: 19.99, cantidad: 0, img: require('../assets/lapAcer1.png') },
-        { id: 2, nombre: 'Producto 2', precio: 24.99, cantidad: 0, img: require('../assets/lapAcer2.png') },
-        { id: 3, nombre: 'Producto 3', precio: 24.99, cantidad: 0, img: require('../assets/lapAsus1.png')}, 
-        { id: 4, nombre: 'Producto 4', precio: 24.99, cantidad: 0, img: require('../assets/lapAsus2.png')}, 
-        { id: 5, nombre: 'Producto 5', precio: 24.99, cantidad: 0, img: require('../assets/lapMac1.png') }, 
+        { id: 1, nombre: 'Laptop Acer', precio: 10000.00, cantidad: 0, img: require('../assets/lapAcer1.png') },
+        { id: 2, nombre: 'Acer Laptop', precio: 15000.00, cantidad: 0, img: require('../assets/lapAcer2.png') },
+        { id: 3, nombre: 'Laptop Asus', precio: 6999.99, cantidad: 0, img: require('../assets/lapAsus1.png')}, 
+        { id: 4, nombre: 'Asus Laptop', precio: 20000.00, cantidad: 0, img: require('../assets/lapAsus2.png')}, 
+        { id: 5, nombre: 'MacBook Pro', precio: 24999.99, cantidad: 0, img: require('../assets/lapMac1.png') }, 
     ];
 
     const [cantidadProducto, setcantidadProducto] = useState<{ [key: number]: number }>({});

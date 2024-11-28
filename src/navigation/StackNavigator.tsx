@@ -19,23 +19,20 @@ const Stack = createStackNavigator();
 
 function StackNavigator() {
 
-const [carrito, setCarrito] = useState<Producto[]>([]);
+const [carrito, setCarrito] = useState<Producto[]>([]); //EStado general que almacena los producto añadidos al carrito
 
-// Función para agregar productos al carrito
 const agregarAlCarrito = (producto: Producto) => {
-    const cantidad = producto.cantidad ?? 1; // Usa 1 como valor predeterminado si cantidad es undefined
+    const cantidad = producto.cantidad ?? 1; //si cantidad no existe, ahora vale 1
     setCarrito((prevCarrito) => {
         const existente = prevCarrito.find((item) => item.id === producto.id);
         if (existente) {
-            // Si el producto ya está en el carrito, actualizamos la cantidad
             return prevCarrito.map((item) =>
                 item.id === producto.id
-                    ? { ...item, cantidad: (item.cantidad ?? 0) + cantidad } // Asegúrate de que item.cantidad tenga un valor
+                    ? { ...item, cantidad: (item.cantidad ?? 0) + cantidad } 
                     : item
             );
         } else {
-            // Si no está en el carrito, lo añadimos
-            return [...prevCarrito, { ...producto, cantidad }]; // Asegúrate de establecer cantidad aquí también
+            return [...prevCarrito, { ...producto, cantidad }];
         }
     });
 };
@@ -56,7 +53,7 @@ const eliminarDelCarrito = (productoId: number) => {
                 options={{ title: 'Smarthphones' }}
             >
                 {(props) => (
-                    <PhonesScreen {...props} agregarAlCarrito={agregarAlCarrito} />
+                    <PhonesScreen {...props} agregarAlCarrito={agregarAlCarrito} /> //la función se pasa como props
                 )}
             </Stack.Screen>
             <Stack.Screen
