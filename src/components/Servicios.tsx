@@ -18,9 +18,9 @@ interface Props {
 
 export const Servicios = ({agregarAlCarrito}:Props) => {
     const servicios: Servicio[] = [
-        { id: 1, nombre: 'Soporte Técnico', precio: 600.00, img: require('../assets/sopTecnico.png') },
-        { id: 2, nombre: 'Instalacion de SW', precio: 400.00, img: require('../assets/installSW.png') },
-        { id: 3, nombre: 'Mantenimiento', precio: 500.00, img: require('../assets/mantenimiento.png')}, 
+        { id: 11, nombre: 'Soporte Técnico', precio: 600.00, img: require('../assets/sopTecnico.png') },
+        { id: 12, nombre: 'Instalacion de SW', precio: 400.00, img: require('../assets/installSW.png') },
+        { id: 13, nombre: 'Mantenimiento', precio: 500.00, img: require('../assets/mantenimiento.png')}, 
     ];
 
     const handleCarrito = (servicio: Servicio) => {
